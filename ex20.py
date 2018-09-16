@@ -12,7 +12,7 @@ seek中还可以加第二个可选参数，0：absolute file positioning；
 1：relative to the current position; 2: relative to the file's end.'''
 def rewind(f):
     f.seek(0)
-
+# readline() 加的参数表示读取的字节数，readline(1) 读取光标所在位置后的一个字节。
 def print_a_line(line_count, f):
     print(line_count, f.readline())
 
