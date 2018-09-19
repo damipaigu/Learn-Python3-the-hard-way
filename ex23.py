@@ -1,7 +1,7 @@
 import sys
 script, input_encoding, error = sys.argv
 
-
+# main函数做了递归。
 def main(language_file, encoding, errors):
     line = language_file.readline()
 

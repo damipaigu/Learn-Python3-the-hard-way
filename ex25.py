@@ -1,6 +1,6 @@
 def break_words(stuff):
     """This function will break up words for us."""
-    words = stuff.split(' ') # split strings by whitespace (words是list类型,为什么这里不是tuple？)
+    words = stuff.split(' ') # split strings by whitespace 等效于.split()。运算结果为一个list。
     return words
 
 def sort_words(words):
