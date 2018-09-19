@@ -30,7 +30,8 @@ else:
 for word in urlopen(WORD_URL).readlines():
     WORDS.append(str(word.strip(), encoding='utf-8'))
 
-
+'''random.sample(population, k): return a k length list of unique elements
+chosen from the population sequence or set.'''
 def convert(snippet, phrase):
     class_names = [w.capitalize() for w in random.sample(WORDS, snippet.count("%%%"))]
     other_names = random.sample(WORDS, snippet.count("***"))
@@ -38,7 +39,7 @@ def convert(snippet, phrase):
     param_names = []
 
     for i in range(0, snippet.count("@@@")):
-        param_count = random.ranint(1, 3)
+        param_count = random.randint(1, 3)
         param_names.append(', '.join(random.sample(WORDS, param_count)))
 
     for sentence in snippet, phrase:
