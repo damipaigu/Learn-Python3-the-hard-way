@@ -65,7 +65,7 @@ start_point = start_point / 10
 print("We can also do that this way:")
 formula = secret_formula(start_point)
 # this is an easy way to apply a list to a format string
-print("We'd have {} beans, {} jars, and {} crates.".format(*formula))
+print("We'd have {} beans, {} jars, and {} crates.".format(*formula)) # 记住这里format中*的使用方法。
 
 
 
