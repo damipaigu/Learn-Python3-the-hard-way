@@ -11,7 +11,6 @@ def print_all(f):
 seek中还可以加第二个可选参数，0：absolute file positioning；
 1：relative to the current position; 2: relative to the file's end.'''
 def rewind(f):
-    f.seek(0)
 # readline() 加的参数表示读取的字节数，参数为空表示读取整行；
 # readline(1) 读取光标所在位置后的一个字节。读取后光标会移动到读取的字符之后。
 def print_a_line(line_count, f):
@@ -40,7 +39,7 @@ print_a_line(current_line, current_file)
 
 ''' my own test
 readline 读取当前位置的一行内容
-readlines 读取文件内包含的所有行，以行为单位一块输出。
+readlines 读取文件内包含的所有行，以行为单位一块输出为一个list。
 '''
 print('*' * 15)
 rewind(current_file)

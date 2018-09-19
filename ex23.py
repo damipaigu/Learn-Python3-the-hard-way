@@ -9,7 +9,8 @@ def main(language_file, encoding, errors):
         print_line(line, encoding, errors)
         return main(language_file, encoding, errors) # recursion 递归
 
-
+# strip(str):把字符串前后含有str中字符的部分删除，直到不包含在str中的字符出现。
+# 或者说，strip是由两侧向中间的过程，到不能删除的部分截止，即使中间还有可以删的字符。
 def print_line(line, encoding, errors):
     next_lang = line.strip()
     raw_bytes = next_lang.encode(encoding, errors=errors)
