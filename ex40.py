@@ -6,7 +6,7 @@ class Song(object):
     def sing_me_a_song(self):
         for line in self.lyrics:
             print(line)
-
+# how did the object goes to lyrics???这参数不同名啊 怎么传递过去的？？？
 happy_baby = Song(["Happy birthday to you",
                    "I don't want to get sued",
                    "So I'll stop right there"])

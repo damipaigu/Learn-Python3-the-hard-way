@@ -8,14 +8,19 @@ WORDS = []
 PHRASES = {
     "class %%%(%%%):":
       "Make a class named %%% that is-a %%%.",
+
     "class %%%(object):\n\tdef __init__(self, ***)":
       "class %%% has-a __init__ that takes self and *** params.",
+
     "class %%%(object): \n\tdef ***(self, @@@)":
       "classs %%% has-a function *** that takes self and @@@ params.",
+
     "*** = %%%()":
       "Set *** to an instance of class %%%.",
+
     "***.***(@@@)":
       "From *** get the *** function, call it with params self, @@@.",
+
     "***.*** = '***'":
       "From *** get the *** attribute and set it to '***'."
 }
@@ -32,9 +37,14 @@ for word in urlopen(WORD_URL).readlines():
 
 '''random.sample(population, k): return a k length list of unique elements
 chosen from the population sequence or set.'''
+'''.capitalize() function converts the first letter of the string to capital. If
+its first letter is already capital, then it returns the original string.
+'''
 def convert(snippet, phrase):
     class_names = [w.capitalize() for w in random.sample(WORDS, snippet.count("%%%"))]
+    print(f"class_names is {class_names}")
     other_names = random.sample(WORDS, snippet.count("***"))
+    print(f"other_names is {other_names}")
     results = []
     param_names = []
 
@@ -59,6 +69,8 @@ def convert(snippet, phrase):
 
         results.append(result)
 
+    return results
+
 
 # keep going until they hit CTRL-D
 try:
@@ -69,12 +81,12 @@ try:
         for snippet in snippets:
             phrase = PHRASES[snippet]
             question, answer = convert(snippet, phrase)
-            if PHRASE_FISRT:
-                question, answer = answer, # QUESTION:
+            if PHRASE_FIRST:
+                question, answer = answer, question
 
             print(question)
 
             input("> ")
-            print(f"ANSWER:    {ANSWER}\n\n")
+            print(f"ANSWER:    {answer}\n\n")
 except EOFError:
     print("\nBye")

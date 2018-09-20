@@ -35,7 +35,7 @@ print("Florida has: ", cities[states['Florida']])
 
 # print every state abbreviation. .items() Return a new view of the dictionary’s items ((key, value) pairs).
 print('*' * 10)
-for abbrev, city in tuple(cities.items()): # list & tuple both works fine in this for loop more tests on the buttom;
+for abbrev, city in tuple(cities.items()): # list & tuple both works fine in this for loop, more tests on the buttom;
     print(f"{abbrev} has the city {city}")
 
 # print every city in state
@@ -61,5 +61,5 @@ city = cities.get('TX', 'Does Not Exist')
 print(f"The city for the state 'TX' is: {city}")
 
 # My extra tests,
-print(list(states.items()))
-print(tuple(states.items()))
+print(list(states.items()))  # list use []
+print(tuple(states.items())) # tuple use ()
