@@ -4,7 +4,7 @@ import sys
 
 WORD_URL = "http://learncodethehardway.org/words.txt"
 WORDS = []
-
+# PHRASES中，%%% @@@ *** 都是所见即所得。
 PHRASES = {
     "class %%%(%%%):":
       "Make a class named %%% that is-a %%%.",
